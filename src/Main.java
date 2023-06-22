@@ -2,37 +2,100 @@ public class Main {
     public static void main(String[] args) {
 
         String text = "Anything for test";
-        String lowCase = text.toLowerCase();
-        String newReplace = lowCase.replace("a", "¹⁄₁");
-        String newReplace2 = newReplace.replace("b", "²⁄₁");
-        String newReplace3 = newReplace2.replace("c", "²⁄₁");
-        String newReplace4 = newReplace3.replace("d", "⁴⁄₁");
-        String newReplace5 = newReplace4.replace("e", "⁵⁄₁");
-        String newReplace6 = newReplace5.replace("f", "½");
-        String newReplace7 = newReplace6.replace("g", "²⁄₂");
-        String newReplace8 = newReplace7.replace("h", "³⁄₂");
-        String newReplace9 = newReplace8.replace("i", "⁴⁄₂");
-        String newReplace10 = newReplace9.replace("j", "⁵⁄₂");
-        String newReplace11 = newReplace10.replace("k", "⅓");
-        String newReplace12 = newReplace11.replace("l", "⅔");
-        String newReplace13 = newReplace12.replace("ł", "³⁄₃");
-        String newReplace14 = newReplace13.replace("m", "⁴⁄₃");
-        String newReplace15 = newReplace14.replace("n", "⁵⁄₃");
-        String newReplace16 = newReplace15.replace("o", "¼");
-        String newReplace17 = newReplace16.replace("p", "²⁄₄");
-        String newReplace18 = newReplace17.replace("r", "¾");
-        String newReplace19 = newReplace18.replace("s", "⁴⁄₄");
-        String newReplace20 = newReplace19.replace("t", "⁵⁄₄");
-        String newReplace21 = newReplace20.replace("u", "⅕");
-        String newReplace22 = newReplace21.replace("w", "⅖");
-        String newReplace23 = newReplace22.replace("x", "⅗");
-        String newReplace24 = newReplace23.replace("y", "⅘");
-        String newReplace25 = newReplace24.replace("z", "⁵⁄₅");
-        String newReplace26 = newReplace25.replaceAll("\\s", "|");
-        String newReplace27 = newReplace26.replace(",", "|,");
-        String newReplace28 = newReplace27.replace(".", "|.");
+        StringBuilder result = new StringBuilder();
 
+        for (char c : text.toCharArray()) {
+            switch (c) {
+                case 'a':
+                    result.append("¹⁄₁");
+                    break;
+                case 'b':
+                    result.append("²⁄₁");
+                    break;
+                case 'c':
+                    result.append("³⁄₁");
+                    break;
+                case 'd':
+                    result.append("⁴⁄₁");
+                    break;
+                case 'e':
+                    result.append("⁵⁄₁");
+                    break;
+                case 'f':
+                    result.append("½");
+                    break;
+                case 'g':
+                    result.append("²⁄₂");
+                    break;
+                case 'h':
+                    result.append("³⁄₂");
+                    break;
+                case 'i':
+                    result.append("⁴⁄₂");
+                    break;
+                case 'j':
+                    result.append("⁵⁄₂");
+                    break;
+                case 'k':
+                    result.append("⅓");
+                    break;
+                case 'l':
+                    result.append("⅔");
+                    break;
+                case 'ł':
+                    result.append("³⁄₃");
+                    break;
+                case 'm':
+                    result.append("⁴⁄₃");
+                    break;
+                case 'n':
+                    result.append("⁵⁄₃");
+                    break;
+                case 'o':
+                    result.append("¼");
+                    break;
+                case 'p':
+                    result.append("²⁄₄");
+                    break;
+                case 'r':
+                    result.append("¾");
+                    break;
+                case 's':
+                    result.append("⁴⁄₄");
+                    break;
+                case 't':
+                    result.append("⁵⁄₄");
+                    break;
+                case 'u':
+                    result.append("⅕");
+                    break;
+                case 'w':
+                    result.append("⅖");
+                    break;
+                case 'x':
+                    result.append("⅗");
+                    break;
+                case 'y':
+                    result.append("⅘");
+                    break;
+                case 'z':
+                    result.append("⁵⁄₅");
+                    break;
+                case ' ':
+                    result.append("|");
+                    break;
+                case ',':
+                    result.append("|,");
+                    break;
+                case '.':
+                    result.append("|.");
+                    break;
+                default:
+                    result.append(c);
+            }
+        }
 
-        System.out.println(newReplace28);
+        String finalResult = result.toString();
+        System.out.println(finalResult);
     }
 }
